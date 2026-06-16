@@ -14,6 +14,10 @@
       "dest": "/public/$1"
     },
     {
+      "src": "/build/(.*)",
+      "dest": "/public/build/$1"
+    },
+    {
       "src": "/(css|js|images|bootstrap-5\\.3\\.8-dist)/(.*)",
       "dest": "/public/$1/$2"
     },
@@ -22,6 +26,7 @@
       "dest": "/api/index.php"
     }
   ],
+  "outputDirectory": "public",
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "false",
@@ -29,7 +34,7 @@
     "SESSION_DRIVER": "database",
     "CACHE_STORE": "database",
     "QUEUE_CONNECTION": "sync",
-    "FILESYSTEM_DISK": "local",
+    "FILESYSTEM_DISK": "public",
     "APP_CONFIG_CACHE": "/tmp/config.php",
     "APP_EVENTS_CACHE": "/tmp/events.php",
     "APP_PACKAGES_CACHE": "/tmp/packages.php",
