@@ -22,7 +22,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if ($this->app->environment('production')) {
+        $appUrlHost = parse_url((string) config('app.url'), PHP_URL_HOST);
+
+        if ($this->app->environment('production') || env('VERCEL') || str_ends_with((string) $appUrlHost, 'vercel.app')) {
             URL::forceScheme('https');
         }
 
