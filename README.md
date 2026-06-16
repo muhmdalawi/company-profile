@@ -1,6 +1,6 @@
 # Company Profile Nigmagrid Indonesia
 
-Project Company Profile berbasis Laravel untuk website Nigmagrid Indonesia. Website ini memiliki halaman frontend publik dan backend administrator untuk mengelola konten sesuai kebutuhan UAS Backend Company Profile.
+Project Company Profile berbasis Laravel untuk website Nigmagrid Indonesia. Website ini memiliki halaman frontend publik dan backend administrator untuk mengelola konten Company Profile.
 
 ## Fitur Utama
 
@@ -17,12 +17,11 @@ Project Company Profile berbasis Laravel untuk website Nigmagrid Indonesia. Webs
 - Upload gambar menggunakan Laravel Storage.
 - Validasi form menggunakan Laravel Validation.
 - Export laporan PDF untuk Blog, Services, dan Gallery menggunakan DomPDF.
-- Frontend tetap memakai tampilan existing dengan data dari database dan fallback asset lama.
 
 ## Teknologi
 
 - Laravel 12
-- PHP 8.4+ direkomendasikan untuk dependency lock saat ini
+- PHP 8.4+
 - MySQL
 - Blade Template
 - Bootstrap 5
