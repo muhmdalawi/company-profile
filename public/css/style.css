@@ -1,0 +1,403 @@
+:root {
+    --primary-color: #1f3a5f;
+    --primary-dark: #162c47;
+}
+
+* {
+    transition: all 0.3s ease;
+}
+
+body {
+    padding-top: 70px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar-custom {
+    background: rgba(31, 58, 95, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand img {
+    height: 35px;
+    margin-right: 10px;
+}
+
+.navbar-brand span {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.navbar .nav-link {
+    position: relative;
+    color: rgba(255, 255, 255, 0.45) !important;
+    margin-left: 10px;
+}
+
+.navbar .nav-link.active {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    transition: 0.3s;
+}
+
+.navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar .nav-link:hover {
+    transform: translateY(-1px);
+}
+
+.navbar.scrolled {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.footer-custom {
+    background: linear-gradient(135deg, #1f3a5f, #162c47);
+    color: #fff;
+}
+
+.section-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ccc, transparent);
+}
+
+.footer-link {
+    color: #ddd;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.footer-link:hover {
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.social-icon {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: #fff;
+    color: var(--primary-color);
+    transform: scale(1.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+footer h6 {
+    letter-spacing: 0.5px;
+}
+
+footer p {
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-link {
+        margin-left: 0;
+    }
+}
+
+#typing-text::after,
+#typing-sub::after {
+    content: " ";
+    animation: blink 1s infinite;
+    margin-left: 3px;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.hero-section {
+    min-height: 70vh;
+}
+
+.hero-section h1,
+.hero-section h3,
+.hero-section p,
+.hero-section a {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeHero 0.8s ease forwards;
+}
+
+.hero-section h1 {
+    animation-delay: 0.2s;
+}
+
+.hero-section h3 {
+    animation-delay: 0.4s;
+}
+
+.hero-section p {
+    animation-delay: 0.6s;
+}
+
+.hero-section a {
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeHero {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-image {
+    position: relative;
+    max-width: 420px;
+    margin: auto;
+    height: 350px;
+    transform: translateX(100px);
+}
+
+.hero-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.8s ease-in-out;
+    animation: float 4s ease-in-out infinite;
+}
+
+.hero-image img.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.services-section {
+    padding: 50px 0 100px;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.about-logo {
+    max-width: 240px;
+    transition: 0.4s;
+}
+
+.about-logo:hover {
+    transform: scale(1.05);
+}
+
+.stat-box,
+.service-item,
+.service-card,
+.team-card,
+.why-card,
+.blog-card,
+.contact-card {
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: 0.4s ease;
+    overflow: hidden;
+}
+
+.stat-box:hover,
+.service-item:hover,
+.service-card:hover,
+.team-card:hover,
+.why-card:hover,
+.blog-card:hover,
+.contact-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-img {
+    width: 80px;
+    border-radius: 12px;
+    background-color: #fff;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.service-item:hover .service-img,
+.service-card:hover .service-img {
+    transform: scale(1.15) rotate(3deg);
+}
+
+.team-img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.team-card:hover .team-img {
+    transform: scale(1.1);
+}
+
+.why-img {
+    width: 60px;
+    transition: 0.3s;
+}
+
+.why-card:hover .why-img {
+    transform: scale(1.2);
+}
+
+.blog-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.blog-card:hover .blog-img {
+    transform: scale(1.05);
+}
+
+.read-more {
+    font-size: 14px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.blog-card:hover .read-more {
+    transform: translateX(5px);
+}
+
+.blog-detail-img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: 0.4s;
+}
+
+.blog-detail-img:hover {
+    transform: scale(1.03);
+}
+
+.blog-content {
+    line-height: 1.9;
+    font-size: 16px;
+    color: #444;
+}
+
+.blog-content p {
+    margin-bottom: 15px;
+}
+
+.pagination {
+    gap: 6px;
+}
+
+.page-link {
+    border-radius: 8px !important;
+    border: none;
+    color: var(--primary-color);
+    background: #f1f3f5;
+    padding: 8px 14px;
+}
+
+.page-link:hover,
+.page-item.active .page-link {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.page-item.disabled .page-link {
+    background: #e9ecef;
+    color: #aaa;
+}
+
+.badge {
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.back-btn:hover {
+    transform: translateX(-5px);
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(31, 58, 95, 0.15);
+}
+
+.send-btn {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.send-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+}
+
+.contact-info p:hover {
+    transform: translateX(5px);
+    color: var(--primary-color);
+}
+
+.fade-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.fade-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.6s ease;
+}
