@@ -1,59 +1,218 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Company Profile Nigmagrid Indonesia
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Project Company Profile berbasis Laravel untuk website Nigmagrid Indonesia. Website ini memiliki halaman frontend publik dan backend administrator untuk mengelola konten sesuai kebutuhan UAS Backend Company Profile.
 
-## About Laravel
+## Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Frontend company profile: Home, About, Services, Blog, dan Contact.
+- Manual authentication admin menggunakan Laravel Session.
+- Password admin disimpan menggunakan Hash.
+- Middleware admin untuk melindungi seluruh halaman administrator.
+- Dashboard admin berisi ringkasan jumlah data.
+- CRUD Blog sebagai modul Artikel/Berita.
+- CRUD Services sebagai modul Produk/Layanan.
+- CRUD Gallery sebagai modul Galeri.
+- Edit Company Profile, Contact, dan Footer.
+- CRUD Leadership dan Team.
+- Upload gambar menggunakan Laravel Storage.
+- Validasi form menggunakan Laravel Validation.
+- Export laporan PDF untuk Blog, Services, dan Gallery menggunakan DomPDF.
+- Frontend tetap memakai tampilan existing dengan data dari database dan fallback asset lama.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Teknologi
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Laravel 12
+- PHP 8.4+ direkomendasikan untuk dependency lock saat ini
+- MySQL
+- Blade Template
+- Bootstrap 5
+- Laravel Session
+- Laravel Storage
+- Barryvdh Laravel DomPDF
 
-## Learning Laravel
+## Halaman Publik
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+| Halaman | Route |
+| --- | --- |
+| Home | `/` |
+| About | `/about` |
+| Services | `/services` |
+| Blog | `/blog` |
+| Detail Blog | `/blog/{id-or-slug}` |
+| Contact | `/contact` |
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Halaman Admin
 
-## Laravel Sponsors
+| Modul | Route |
+| --- | --- |
+| Login Admin | `/admin/login` |
+| Dashboard | `/admin/dashboard` |
+| Company Profile | `/admin/company-profile` |
+| Blog | `/admin/blogs` |
+| Services | `/admin/services` |
+| Gallery | `/admin/galleries` |
+| Leadership | `/admin/leaders` |
+| Team | `/admin/teams` |
+| Reports | `/admin/reports` |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Akun Admin Default
 
-### Premium Partners
+Akun ini dibuat melalui seeder:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```text
+Email    : admin@nigmagrid.test
+Password : password123
+```
 
-## Contributing
+## Instalasi
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Clone atau masuk ke folder project, lalu jalankan:
 
-## Code of Conduct
+```bash
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Atur konfigurasi database pada file `.env`:
 
-## Security Vulnerabilities
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_company
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Jalankan migration, seeder, dan storage link:
 
-## License
+```bash
+php artisan migrate --seed
+php artisan storage:link
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Jalankan server:
+
+```bash
+php artisan serve
+```
+
+Buka website:
+
+```text
+http://127.0.0.1:8000
+```
+
+## Catatan PHP di Laragon
+
+Pada environment pengembangan ini, project diverifikasi menggunakan PHP:
+
+```text
+C:\laragon\bin\php\php-8.5.7-Win32-vs17-x64\php.exe
+```
+
+Jika command `php artisan` gagal karena PHP default masih versi lama, arahkan PATH/Laragon ke PHP 8.4+ atau jalankan Artisan dengan path PHP tersebut.
+
+Contoh:
+
+```powershell
+& 'C:\laragon\bin\php\php-8.5.7-Win32-vs17-x64\php.exe' artisan migrate --seed
+```
+
+## Struktur Modul Database
+
+Project menggunakan tabel utama berikut:
+
+- `users` untuk akun admin manual.
+- `blogs` untuk artikel/blog.
+- `services` untuk layanan.
+- `galleries` untuk galeri.
+- `company_profiles` untuk data about, contact, footer, dan sosial media.
+- `leaders` untuk data leadership.
+- `teams` untuk data team.
+
+## Upload Gambar
+
+Upload gambar disimpan di:
+
+```text
+storage/app/public
+```
+
+File dapat diakses melalui:
+
+```text
+public/storage
+```
+
+Project tetap mendukung gambar existing dari:
+
+```text
+public/images
+```
+
+## Export PDF
+
+Menu Reports tersedia di admin:
+
+- Blog PDF: `/admin/reports/blog/pdf`
+- Services PDF: `/admin/reports/services/pdf`
+- Gallery PDF: `/admin/reports/galleries/pdf`
+
+PDF hanya bisa diakses setelah login admin.
+
+## Testing
+
+Jalankan test:
+
+```bash
+php artisan test
+```
+
+Command yang sudah digunakan untuk verifikasi:
+
+```bash
+php artisan migrate --seed
+php artisan storage:link
+php artisan route:list
+php artisan test
+```
+
+Hasil verifikasi terakhir:
+
+```text
+Tests: 2 passed
+```
+
+## Checklist UAS
+
+- [x] Authentication manual
+- [x] Login admin
+- [x] Logout admin
+- [x] Password Hash
+- [x] Session Laravel
+- [x] Middleware admin
+- [x] Dashboard admin
+- [x] CRUD Blog
+- [x] CRUD Services
+- [x] CRUD Gallery
+- [x] Company Profile/About management
+- [x] Leadership management
+- [x] Team management
+- [x] Contact/Footer setting
+- [x] Validasi form
+- [x] Upload gambar
+- [x] Export PDF
+- [x] Frontend tetap memakai desain existing
+
+## Git
+
+Remote repository:
+
+```bash
+git remote add origin https://github.com/muhmdalawi/company-profile.git
+```
+
+Jika push gagal dengan error permission, pastikan akun GitHub yang aktif memiliki akses collaborator ke repository tersebut.
