@@ -146,7 +146,7 @@ Menu Reports tersedia di admin:
 
 PDF hanya bisa diakses setelah login admin.
 
-## Deploy ke Vercel
+<!-- ## Deploy ke Vercel
 
 Project ini bisa dideploy ke Vercel menggunakan community runtime `vercel-php`. Database production memakai Railway MySQL. Untuk saat ini upload gambar production belum diaktifkan, jadi deploy Vercel cukup memakai gambar seed/static dari `public/images`.
 
@@ -306,4 +306,4 @@ Checklist setelah deploy Vercel:
 
 ## Catatan Serverless
 
-Vercel cocok untuk demo dan traffic ringan. Untuk Laravel production jangka panjang, shared hosting PHP, VPS, Laravel Forge, atau platform PHP-native biasanya lebih sederhana karena filesystem, queue, scheduler, dan worker Laravel lebih natural di server biasa.
+Vercel cocok untuk demo dan traffic ringan. Untuk Laravel production jangka panjang, shared hosting PHP, VPS, Laravel Forge, atau platform PHP-native biasanya lebih sederhana karena filesystem, queue, scheduler, dan worker Laravel lebih natural di server biasa. -->
