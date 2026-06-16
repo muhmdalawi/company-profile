@@ -105,22 +105,6 @@ Buka website:
 http://127.0.0.1:8000
 ```
 
-## Catatan PHP di Laragon
-
-Pada environment pengembangan ini, project diverifikasi menggunakan PHP:
-
-```text
-C:\laragon\bin\php\php-8.5.7-Win32-vs17-x64\php.exe
-```
-
-Jika command `php artisan` gagal karena PHP default masih versi lama, arahkan PATH/Laragon ke PHP 8.4+ atau jalankan Artisan dengan path PHP tersebut.
-
-Contoh:
-
-```powershell
-& 'C:\laragon\bin\php\php-8.5.7-Win32-vs17-x64\php.exe' artisan migrate --seed
-```
-
 ## Struktur Modul Database
 
 Project menggunakan tabel utama berikut:
@@ -162,57 +146,3 @@ Menu Reports tersedia di admin:
 - Gallery PDF: `/admin/reports/galleries/pdf`
 
 PDF hanya bisa diakses setelah login admin.
-
-## Testing
-
-Jalankan test:
-
-```bash
-php artisan test
-```
-
-Command yang sudah digunakan untuk verifikasi:
-
-```bash
-php artisan migrate --seed
-php artisan storage:link
-php artisan route:list
-php artisan test
-```
-
-Hasil verifikasi terakhir:
-
-```text
-Tests: 2 passed
-```
-
-## Checklist UAS
-
-- [x] Authentication manual
-- [x] Login admin
-- [x] Logout admin
-- [x] Password Hash
-- [x] Session Laravel
-- [x] Middleware admin
-- [x] Dashboard admin
-- [x] CRUD Blog
-- [x] CRUD Services
-- [x] CRUD Gallery
-- [x] Company Profile/About management
-- [x] Leadership management
-- [x] Team management
-- [x] Contact/Footer setting
-- [x] Validasi form
-- [x] Upload gambar
-- [x] Export PDF
-- [x] Frontend tetap memakai desain existing
-
-## Git
-
-Remote repository:
-
-```bash
-git remote add origin https://github.com/muhmdalawi/company-profile.git
-```
-
-Jika push gagal dengan error permission, pastikan akun GitHub yang aktif memiliki akses collaborator ke repository tersebut.
