@@ -11,10 +11,10 @@ class AdminUserSeeder extends Seeder
     public function run(): void
     {
         User::updateOrCreate(
-            ['email' => 'admin@nigmagrid.net'],
+            ['email' => 'admin@nigmagrid.test'],
             [
                 'name' => 'Admin Nigmagrid',
-                'password' => Hash::make('password'),
+                'password' => Hash::make('password123'),
             ]
         );
     }
